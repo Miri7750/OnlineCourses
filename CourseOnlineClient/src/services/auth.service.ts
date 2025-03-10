@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 
-//https://coursesserver-p3is.onrender.com
+//https://onlinecourses-lkg6.onrender.com
 export class AuthService {
   // private apiUrl = 'coursesserver-p3is.onrender.com/api/auth'; // או ה־URL המתאים לשרת שלך
   private apiUrl = 'localhost:3000/api/auth'; //
