@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CourseOnlineClient:build:production"
+               "buildTarget": "CourseOnlineClient:build:production"
             },
             "development": {
-              "browserTarget": "CourseOnlineClient:build:development"
+              "buildTarget": "CourseOnlineClient:build:development"
             }
           },
           "defaultConfiguration": "development"
