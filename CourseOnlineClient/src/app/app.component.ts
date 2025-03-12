@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RegisterComponent } from "../components/register/register.component";
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user';
+import { UserService } from '../services/user/user.service';
+import { HomeComponent } from "../components/home/home.component";
+import { MenuComponent } from "../components/menu/menu.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,RouterLinkActive,RouterModule,MatToolbarModule,MatButtonModule],
+  standalone: true,
+  imports: [CommonModule, MenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'CoursesProject';
+export class AppComponent implements OnInit {
+  token!:any
+  constructor(private userService:UserService){}
+  ngOnInit(){
+   this.token= this.userService.getToken();}
+  title = 'myProject';
 }

@@ -1,23 +1,16 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from '../components/homePage/home-page.component';
+import { RegisterComponent } from '../components/register/register.component';
 import { LoginComponent } from '../components/login/login.component';
-import { SignUpComponent } from '../components/signUp/sign-up.component';
-import { authGuardGuard } from '../guards/auth-guard.guard';
-//import { AuthComponent } from '../components/auth/auth.component';
-//import { CoursesListComponent } from '../components/courses-list/courses-list.component';
-//import { TeacherPageComponent } from '../components/teacher-page/teacher-page.component';
-import { teacherGuard } from '../guards/teacher.guard';
-//import { CourseSyllabusComponent } from '../components/course-syllabus/course-syllabus.component';
+import { CoursesComponent } from '../components/courses/courses.component';
+import { CourseDetailsComponent } from '../components/course-details/course-details.component';
+import { CourseManagementComponent } from '../components/course-management/course-management.component';
+import { HomeComponent } from '../components/home/home.component';
 
 export const routes: Routes = [
-
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent, canActivate: [authGuardGuard] },
-  //{ path: 'auth', component: AuthComponent },
-  //{ path: 'list', component: CoursesListComponent , canActivate: [authGuardGuard]},
-  { path: 'login', component: LoginComponent },
-  /{ path: 'signUp', component: SignUpComponent }//,
-  //{ path: 'teacher', component: TeacherPageComponent, canActivate: [authGuardGuard,teacherGuard] },
-  //{ path: 'CourseSyllabus', component: CourseSyllabusComponent, canActivate: [authGuardGuard] }
-  
+    {path:'',component: HomeComponent},
+    {path:'register',component: RegisterComponent},
+    {path:'login',component: LoginComponent},
+    {path:'courses',component:CoursesComponent},
+    {path:'course-details/:id',component:CourseDetailsComponent},
+    {path:'courseManagement',component:CourseManagementComponent },
 ];

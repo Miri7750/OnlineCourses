@@ -1,1 +1,32 @@
-<p>login works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-card class="login-card">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" formControlName="email">
+          @if(loginForm.controls['email'].hasError('required')){
+          <mat-error>
+            Email is required
+          </mat-error>
+        }
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" id="password" formControlName="password">
+          @if(loginForm.controls['password'].hasError('required')){
+          <mat-error >
+            Password is required
+          </mat-error>
+        }
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+          Login
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </form>
+  
